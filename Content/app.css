@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+:root {
+    --mainBlue: #40ACF1;
+    --tansparentBlue: rgba(64, 172, 241, 0.7);
+    --mainWhite: #FFFFFF;
+    --mainBlack: #292F36;
+    --mainGrey: rgb(216, 214, 214);
+    --mainYellow: #e3b505;
+}
+
+body {
+    font-family: 'Slabo';
+    color: var(--mainBlack);
+    background: var(--mainWhite);
+}
+
+/* Section Title */
+.section-title--special {
+    background: var(--mainBlack);
+    color: var(--mainWhite);
+    padding: 0.5rem 2rem;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    font-size: 2rem;
+}
+
+/* Navbar Section */
+.navbar {
+    background: var(--mainWhite);
+
+}
+
+.navbar-expand-lg {
+    color: transparent;
+    height: 75px;
+}
+
+
+.solid-nav {
+    background-color: #aaa;
+    transition: background-color 0.2s linear;
+}
+
+.navbar-icon {
+    font-size: 2rem;
+    color: var(--mainGrey);
+}
+
+.navbar-toggler {
+    outline-color: var(--mainBlack) !important;
+}
+
+.nav-link {
+    color: var(--mainBlack);
+    text-transform: capitalize;
+    font-size: 1.2rem;
+
+}
+
+.nav-link:hover {
+    color: var(--mainYellow);
+}
+
+/* Header section */
+.header {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+    color: var(--mainWhite);
+    overflow: hidden;
+}
+
+
+.carousel-item {
+    min-height: calc(100vh - 76px);
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation-name: zoom;
+    animation-duration: 20s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+    background-attachment: fixed;
+
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2) translate(-5%);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Services Sections */
+.services-icon {
+    font-size: 3rem;
+    color: var(--mainGrey);
+    background: var(--mainBlack);
+}
+
+.services-icon:hover {
+    color: var(--mainGrey);
+}
+
+.services-underline {
+    width: 4rem;
+    height: 0.3rem;
+    background: var(--mainBlack);
+    margin: 1rem auto;
+}
