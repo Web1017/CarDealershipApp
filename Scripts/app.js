@@ -1,15 +1,13 @@
-$(document).ready(function () {
+// Change nav on scroll
+$(function () {
+    var header = $(".navbar");
 
     $(window).scroll(function () {
-
-        var height = $('.navbar').height();
-        var scrollTop = $(window).scrollTop();
-
-        if (scrollTop >= height - 40) {
-            $('.nav-container').addClass('solid-nav');
+        var scroll = $(window).scrollTop();
+        if (scroll >= 200) {
+            header.addClass("nav-scrolled");
         } else {
-            $('.nav-container').removeClass('solid-nav');
+            header.removeClass("nav-scrolled");
         }
-
-    });
+    })
 });

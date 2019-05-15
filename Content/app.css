@@ -26,24 +26,24 @@ body {
 
 /* Navbar Section */
 .navbar {
-    background: var(--mainWhite);
+    background-color: transparent;
+    color: var(--mainWhite);
 
 }
 
-.navbar-expand-lg {
-    color: transparent;
-    height: 75px;
+
+.nav-scrolled {
+    background: var(--mainBlack);
+    height: 10vh;
+    /* transition: background-color 0.2s linear; */
+    transition: all 1s linear;
+
 }
 
-
-.solid-nav {
-    background-color: #aaa;
-    transition: background-color 0.2s linear;
-}
 
 .navbar-icon {
     font-size: 2rem;
-    color: var(--mainGrey);
+    color: var(--mainWhite);
 }
 
 .navbar-toggler {
@@ -51,7 +51,7 @@ body {
 }
 
 .nav-link {
-    color: var(--mainBlack);
+    color: var(--mainWhite);
     text-transform: capitalize;
     font-size: 1.2rem;
 
@@ -127,7 +127,7 @@ body {
 }
 
 .car-card {
-    border-radius: 0!important;
+    border-radius: 0 !important;
 }
 
 .car-img {
@@ -148,6 +148,7 @@ body {
 .question-grey {
     background: rgba(79, 109, 122, 0.75);
 }
+
 .question-yellow {
     background: rgba(227, 181, 5, 0.75);
 }
@@ -164,6 +165,72 @@ body {
 }
 
 .question-info {
- color: var(--mainWhite);
+    color: var(--mainWhite);
 
+}
+
+/* Vehicle Section */
+.featured {
+    background: var(--mainWhite);
+}
+
+.featured-item {
+    background: var(--mainGrey);
+    border-radius: 0.5rem;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    color: var(--mainBlack);
+}
+
+.featured-item:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.featured-icon {
+    font-size: 1.5rem;
+    color: var(--mainBlack);
+    cursor: pointer;
+    transition: 0.5s all ease-in-out;
+}
+
+.featured-icon:hover {
+    color: var(--mainBlack);
+}
+
+.img-container {
+    background: var(--mainGrey);
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-photo {
+    transition: all 1s ease-in-out;
+}
+
+.img-container:hover .featured-photo {
+    transform: scale(1.3);
+    opacity: 0.5;
+}
+
+
+.featured-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 3rem;
+    transform: translate(-50%, -50%);
+    color: var(--mainWhite);
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.featured-link:hover {
+    color: var(--mainBlack);
+}
+
+
+.img-container:hover .featured-link {
+    opacity: 1;
 }
