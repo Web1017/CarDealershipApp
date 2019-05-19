@@ -35,9 +35,9 @@ const CreateCars = (() => {
     }
 
     // Vehicle function (to create)
-    function makeCar(make, country, img = 'Assets/img/Inventory/CarItem1.jpg', special = true, model = 'new model', price = 20000, type = 'merc', trans = 'automatic', gas) {
+    function makeCar(make, country, img = 'Assets/img/Inventory/CarItem1.jpg', special = true, model = 'new model', price = 20000, type = 'merc', trans = 'automatic', gas = 20, ) {
 
-        const car = new Car(make, country, img, special, model, type, price, trans, gas);
+        const car = new Car(make, country, img, special, model, price, type, trans, gas);
         cars.push(car)
     }
 
@@ -50,6 +50,8 @@ const CreateCars = (() => {
         makeCar('Toyota', 'Japanese', 'Assets/img/Inventory/CarItem5.jpg', true, 'Second model - Used: 2008');
 
     }
+
+
 
     produceCars();
 
@@ -101,3 +103,73 @@ const DisplaySpecialCars = ((CreateCars) => {
     })
 
 })(CreateCars);
+
+
+// Inventory Section Car Information
+const DisplayCars = ((CreateCars) => {
+    //All the Vehicles
+    const cars = CreateCars.cars;
+    console.log(cars);
+    // Container for the cars
+    const inventory = document.querySelector('.inventory-container');
+
+    // Content Loader event listener
+    document.addEventListener('DOMContentLoaded', () => {
+        inventory.innerHTML = '';
+
+        let output = '';
+        cars.forEach((car) => {
+            output += ` <!-- single car -->
+            <div class="col-10 mx-auto my-3 col-md-6 col-lg-4 single-car ${car.country}">
+                <div class="card car-card">
+                    <img src="${car.img}" class="card-img-top car-img" alt="">
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <div class="card-info d-flex justify-content-between">
+                            <!-- First Flex Item -->
+                            <div class="car-text text-uppercase">
+                                <h6 class="font-weight-bold">${car.make}</h6>
+                                <h6>${car.model}</h6>
+                            </div>
+                            <!-- Second Flex Item -->
+                            <h5 class="car-value align-self-center py-2 px-3">
+                            <span class="car-price">${car.price}</span>
+                            </h5>
+                        </div>
+                    </div>
+                    <!-- End of Card Body -->
+                    <div class="card-footer text-capitalize d-flex justify-content-between">
+                        <p><span><i class="fas fa-car"></i></span> ${car.type}</p>
+                        <p><span><i class="fas fa-cogs"></i></span> ${car.trans}</p>
+                        <p><span><i class="fas fa-gas-pump"></i></span> ${car.gas}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end of single car -->`
+        })
+        inventory.innerHTML = output;
+    })
+
+})(CreateCars);
+
+// Filter Cars
+const FilterCars = (() => {
+    const filter = document.querySelectorAll('.filter-btn');
+
+    filter.forEach((btn) => {
+        btn.addEventListener('click', (event) => {
+            const value = event.target.dataset.filter;
+            const singleCar = document.querySelectorAll('.single-car');
+
+            singleCar.forEach((car) => {
+                if (value === 'all') {
+                    car.style.display = 'block';
+                }
+                else {
+                    (!car.classList.contains(value)) ? car.style.display = 'none' : car.style.display = 'block';
+                }
+            })
+        })
+    })
+})();  

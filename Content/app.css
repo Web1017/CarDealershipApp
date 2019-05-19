@@ -24,19 +24,22 @@ body {
     font-size: 2rem;
 }
 
-/* Navbar Section */
+/* Navbar Section - Make background transparent and give smooth transition */
 .navbar {
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
     background-color: transparent;
-    color: var(--mainWhite);
+
 
 }
 
-
 .nav-scrolled {
-    background: var(--mainBlack);
+    background: var(--mainWhite);
     height: 10vh;
-    /* transition: background-color 0.2s linear; */
-    transition: all 1s linear;
+
 
 }
 
@@ -51,9 +54,9 @@ body {
 }
 
 .nav-link {
-    color: var(--mainWhite);
+    color: var(--mainBlack);
     text-transform: capitalize;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 
 }
 
